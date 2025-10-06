@@ -21,7 +21,7 @@ jobs:
           # Trigger TestRigor test run
           curl -X POST \
             -H "Content-Type: application/json" \
-            -H "auth-token: $TESTRIGOR_AUTH_TOKEN" \
+            -H "auth-token: e4d8b1a0-71ac-48da-b3d1-87426631cc2d" \
             --data '{"forceCancelPreviousTesting":true,"storedValues":{"storedValueName1":"Value"}}' \
             https://api.testrigor.com/api/v1/apps/uZhYc9vCNdM3HGqTA/retest
 
@@ -35,7 +35,7 @@ jobs:
             echo "==================================="
 
             response=$(curl -s -i -X GET "https://api.testrigor.com/api/v1/apps/uZhYc9vCNdM3HGqTA/status" \
-                        -H "auth-token: $TESTRIGOR_AUTH_TOKEN" \
+                        -H "auth-token: e4d8b1a0-71ac-48da-b3d1-87426631cc2d" \
                         -H "Accept: application/json")
             
             code=$(echo "$response" | grep HTTP | awk '{print $2}')
